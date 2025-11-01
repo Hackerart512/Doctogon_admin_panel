@@ -21,7 +21,6 @@ import { DoctorSlot } from './src/models/DoctorSlot.js';
 import { College } from './src/models/College.js';
 import { CoinUsage } from './src/models/CoinUsage.js';
 import { RechargeCard } from './src/models/RechargeCard.js';
-import { DoctorSlot } from './src/models/DoctorSlot.js';
 
 
 dotenv.config();
@@ -46,8 +45,7 @@ const adminOptions = {
     { resource: DoctorSlot },
     { resource: College },
     { resource: CoinUsage },
-    { resource: RechargeCard },
-    { resource: DoctorSlot },
+    { resource: RechargeCard }
   ],
   rootPath: '/admin',
   branding: {
