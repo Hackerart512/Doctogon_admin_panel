@@ -20,6 +20,8 @@ import { Feedback } from './src/models/Feedback.js';
 import { DoctorSlot } from './src/models/DoctorSlot.js';
 import { College } from './src/models/College.js';
 import { CoinUsage } from './src/models/CoinUsage.js';
+import { RechargeCard } from './src/models/RechargeCard.js';
+import { DoctorSlot } from './src/models/DoctorSlot.js';
 
 
 dotenv.config();
@@ -38,13 +40,14 @@ const adminOptions = {
     { resource: Session },
     { resource: Review },
     { resource: RechargeHistory },
-    { resource: PaymentIntent },
     { resource: Notification },
     { resource: Location },
     { resource: Feedback },
     { resource: DoctorSlot },
     { resource: College },
     { resource: CoinUsage },
+    { resource: RechargeCard },
+    { resource: DoctorSlot },
   ],
   rootPath: '/admin',
   branding: {
@@ -63,11 +66,11 @@ app.use('/static', express.static(path.join(process.cwd(), 'public')));
 // Connect MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('✅ MongoDB Connected');
+    console.log('MongoDB Connected');
     app.listen(port, () => {
-      console.log(`🚀 Server running on http://localhost:${port}${admin.options.rootPath}`);
+      console.log(`Server running on http://localhost:${port}${admin.options.rootPath}`);
     });
   })
   .catch((err) => {
-    console.error('❌ MongoDB connection error:', err);
+    console.error('MongoDB connection error:', err);
   });
