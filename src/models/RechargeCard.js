@@ -41,4 +41,4 @@ const RechargeCardSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-module.exports = mongoose.model("RechargeCard", RechargeCardSchema);
+export const RechargeCard  = mongoose.model("RechargeCard", RechargeCardSchema);
