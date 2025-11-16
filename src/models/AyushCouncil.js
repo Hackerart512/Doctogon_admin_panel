@@ -1,5 +1,7 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
 const { Schema } = mongoose;
+
 
 const AyushCouncilSchema = new Schema({
     council: {

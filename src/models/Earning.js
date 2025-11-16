@@ -1,6 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
-const earningSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+
+const earningSchema = new Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

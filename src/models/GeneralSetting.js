@@ -1,6 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
-const GeneralSettingsSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+
+const GeneralSettingsSchema = new Schema({
     gstRate: {
         type: Number,
         default: 18,

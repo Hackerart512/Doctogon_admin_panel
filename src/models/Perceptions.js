@@ -1,6 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const PerceptionSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+
+const PerceptionSchema = new  Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },     // Patient
     DoctorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Doctor
     PerceptionTitle: String,

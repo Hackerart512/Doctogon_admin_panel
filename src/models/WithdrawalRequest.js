@@ -1,6 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
-const WithdrawalRequestSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+
+const WithdrawalRequestSchema = new Schema({
     doctorId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
