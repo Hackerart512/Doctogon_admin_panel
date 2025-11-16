@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
+
 const bookingSchema = new Schema({
   doctorId: {
     type: Schema.Types.ObjectId,
@@ -14,7 +15,7 @@ const bookingSchema = new Schema({
     required: true,
   },
   date: {
-    type: String, // Consider changing to Date type if you're storing real dates
+    type: String, // or Date
     required: true,
   },
   time: {
@@ -23,21 +24,41 @@ const bookingSchema = new Schema({
   },
   status: {
     type: String,
-    enum: ['pending', 'confirmed', 'cancelled', 'completed'],
+    enum: ['pending', 'confirmed', 'cancelled'],
     default: 'pending',
   },
-  firstName: String,
-  lastName: String,
-  dob: String,
-  age: Number,
-  gender: String,
-  healthConcern: String,
-  phone: String,
-  city: String,
-  state: String,
-  address: String,
+  firstName: {
+    type: String,
+  },
+  lastName: {
+    type: String,
+  },
+  dob: {
+    type: String,
+  },
+  age: {
+    type: Number,
+  },
+  gender: {
+    type: String,
+  },
+  healthConcern: {
+    type: String,
+  },
+  phone: {
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+  state: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
 }, {
-  timestamps: true,
+  timestamps: true
 });
 
 // ✅ ES6 named export

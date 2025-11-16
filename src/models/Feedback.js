@@ -4,28 +4,28 @@ const feedbackSchema = new mongoose.Schema({
   feedback: {
     type: String,
     required: true,
-    trim: true,
+    trim: true
   },
   hearts: {
     type: Number,
     required: true,
-    min: 0,
+    min: 0
   },
   totalAmount: {
-    type: Number,
+    type: Number
   },
   patientId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
   doctorId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
-  },
+    required: true
+  }
 }, {
-  timestamps: true,
+  timestamps: true
 });
 
 export const Feedback = mongoose.model('Feedback', feedbackSchema);

@@ -19,8 +19,13 @@ import { Location } from './src/models/Location.js';
 import { Feedback } from './src/models/Feedback.js';
 import { DoctorSlot } from './src/models/DoctorSlot.js';
 import { College } from './src/models/College.js';
-import { CoinUsage } from './src/models/CoinUsage.js';
+import { CashUsage } from './src/models/CashUsage.js';
 import { RechargeCard } from './src/models/RechargeCard.js';
+import { WithdrawalRequest } from './src/models/WithdrawalRequest.js';
+import { AyushCouncil } from './src/models/AyushCouncil.js';
+import { Earning } from './src/models/Earning.js';
+import { Perceptions } from './src/models/Perceptions.js';
+import { GeneralSetting } from './src/models/GeneralSetting.js';
 
 
 dotenv.config();
@@ -44,8 +49,14 @@ const adminOptions = {
     { resource: Feedback },
     { resource: DoctorSlot },
     { resource: College },
-    { resource: CoinUsage },
-    { resource: RechargeCard }
+    { resource: AyushCouncil },
+    { resource: CashUsage },
+    { resource: RechargeCard },
+    { resource: WithdrawalRequest },
+    { resource: Earning },
+    { resource: Perceptions },
+    { resource: GeneralSetting },
+
   ],
   rootPath: '/admin',
   branding: {
