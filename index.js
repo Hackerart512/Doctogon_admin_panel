@@ -26,6 +26,7 @@ import { WithdrawalRequest } from './src/models/WithdrawalRequest.js';
 import { Earning } from './src/models/Earning.js';
 import { Perceptions } from './src/models/Perceptions.js';
 import { GeneralSetting } from './src/models/GeneralSetting.js';
+import { Specialization } from './src/models/Specialization.js';
 
 dotenv.config();
 const app = express();
@@ -111,6 +112,7 @@ const adminOptions = {
     { resource: Earning },
     { resource: Perceptions },
     { resource: GeneralSetting },
+    { resource: Specialization },
   ],
 
   rootPath: '/admin',
