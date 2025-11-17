@@ -46,8 +46,11 @@ const specialistDoctorSchema = new Schema({
         Number: String,
         identityProofImage: String, //image
         identityProofSelfie: String, //image
+        slfie_otp:{
+            type: String
+        },
     },
-
+ 
     bankDetails:{
         PAN:String,
         nameOfPAN:String,
