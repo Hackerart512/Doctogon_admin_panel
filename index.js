@@ -57,6 +57,10 @@ const adminOptions = {
         parent: doctorParent,
         properties: {
           password: { isVisible: false }, // hide password
+        },
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
         }
       }
     },
@@ -88,6 +92,10 @@ const adminOptions = {
               accountType: true
             }
           }
+        },
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
         }
       }
     },
@@ -95,24 +103,150 @@ const adminOptions = {
     // ------------------------------
     // Other Models (Normal way)
     // ------------------------------
-    { resource: Booking },
-    { resource: University },
-    { resource: Session },
-    { resource: Review },
-    { resource: RechargeHistory },
-    { resource: Notification },
-    { resource: Location },
-    { resource: Feedback },
-    { resource: DoctorSlot },
-    { resource: College },
-    { resource: AyushCouncil },
-    { resource: CashUsage },
-    { resource: RechargeCard },
-    { resource: WithdrawalRequest },
-    { resource: Earning },
-    { resource: Perceptions },
-    { resource: GeneralSetting },
-    { resource: Specialization },
+    {
+      resource: Booking, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: University, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Session, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Review, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: RechargeHistory, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Notification, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Location, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Feedback, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: DoctorSlot, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: College, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: AyushCouncil, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: CashUsage, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: RechargeCard, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: WithdrawalRequest, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Earning, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Perceptions, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: GeneralSetting, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: Specialization, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
   ],
 
   rootPath: '/admin',
