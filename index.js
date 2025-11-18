@@ -73,13 +73,25 @@ const adminOptions = {
       options: {
         parent: doctorParent,
 
+        // Properties setup
         properties: {
-          // show the linked user at the top, editable
+
           userId: {
             type: "reference",
             reference: "User",
+            isVisible: { list: false, show: true, edit: true, filter: true }
+          },
+
+          // specialization reference
+          specialty: {
+            type: "reference",
+            reference: "Specialization",
             isVisible: { list: true, show: true, edit: true, filter: true }
-          }
+          },
+
+          // allow nested specialistInfo.* to be accessed
+          "specialty": { isVisible: true },
+          "specialistInfo.bio": { isVisible: true },
         },
 
         // Auto-populate user fields inside SHOW view
