@@ -31,12 +31,7 @@ const RechargeCardSchema = new mongoose.Schema(
         isActive: {
             type: Boolean,
             default: true, // can disable the pack temporarily
-        },
-        createdBy: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Admin",
-            default: null,
-        },
+        }
     },
     { timestamps: true }
 );
