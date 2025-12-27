@@ -28,6 +28,10 @@ import { Perceptions } from './src/models/Perceptions.js';
 import { GeneralSetting } from './src/models/GeneralSetting.js';
 import { Specialization } from './src/models/Specialization.js';
 
+
+import session from 'express-session'
+import { authenticateAdmin } from './src/admin/adminAuth.js'
+
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
@@ -265,15 +269,55 @@ const adminOptions = {
 
   branding: {
     companyName: 'Doctogon Admin Panel',
+    withMadeWithLove: false,
     logo: '/static/logo3.png',
-  }
+  },
+  locale: {
+    translations: {
+      en: {
+        login: {
+          welcomeHeader: 'Welcome to DoctoCon',
+          welcomeMessage:
+            'Secure admin access to manage doctors, patients, bookings, payments, and platform settings.',
+          signIn: 'Login',
+          email: 'Admin Email',
+          password: 'Admin Password',
+        },
+      },
+    },
+  },
+
+  assets: {
+    styles: ['/static/admin.css'],
+  },
 };
 
 // ---------------------------------------
 // 🚀 Initialize AdminJS
 // ---------------------------------------
 const admin = new AdminJS(adminOptions);
-const adminRouter = AdminJSExpress.buildRouter(admin);
+
+
+// const adminRouter = AdminJSExpress.buildRouter(admin);
+
+const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
+  admin,
+  {
+    authenticate: authenticateAdmin,
+    cookieName: 'adminjs',
+    cookiePassword: process.env.ADMIN_COOKIE_SECRET,
+  },
+  null,
+  {
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.ADMIN_COOKIE_SECRET,
+    cookie: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+    },
+  }
+)
 
 app.use(admin.options.rootPath, adminRouter);
 
