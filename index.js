@@ -274,7 +274,7 @@ const adminOptions = {
   },
   locale: {
     translations: {
-      en: {
+      en: { 
         login: {
           welcomeHeader: 'Welcome to DoctoCon',
           welcomeMessage:
