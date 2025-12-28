@@ -313,8 +313,9 @@ const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
     saveUninitialized: false,
     secret: process.env.ADMIN_COOKIE_SECRET,
     cookie: {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+       httpOnly: true,
+      secure: true,
+      sameSite: 'none'
     },
   }
 )
@@ -323,6 +324,8 @@ app.use(admin.options.rootPath, adminRouter);
 
 // static assets (logo, images)
 app.use('/static', express.static(path.join(process.cwd(), 'public')));
+
+app.set('trust proxy', 1);
 
 // ---------------------------------------
 // 🚀 Connect MongoDB & Start Server
