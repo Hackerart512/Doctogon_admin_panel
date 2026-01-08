@@ -27,6 +27,7 @@ import { Earning } from './src/models/Earning.js';
 import { Perceptions } from './src/models/Perceptions.js';
 import { GeneralSetting } from './src/models/GeneralSetting.js';
 import { Specialization } from './src/models/Specialization.js';
+import { FAQ } from './src/models/FAQ.js';
 
 
 import session from 'express-session'
@@ -257,6 +258,14 @@ const adminOptions = {
     },
     {
       resource: Specialization, options: {
+        sort: {
+          sortBy: 'createdAt',
+          direction: 'desc',
+        },
+      }
+    },
+    {
+      resource: FAQ, options: {
         sort: {
           sortBy: 'createdAt',
           direction: 'desc',
